@@ -1,0 +1,13 @@
+django<4
+django-extensions<4
+djangorestframework<4
+djangorestframework-jwt<2
+drf-firebase-auth<1
+django-cors-headers<4
+psycopg2<3
+whitenoise<6
+django-bleach<1
+django-filter<3
+django-import-export<3
+uuid<2
+gunicorn<21

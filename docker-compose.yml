@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  sp_frontend:
+    image: node:lts
+    container_name: sp_frontend
+    restart: always
+    command: bash -c "npm install && HOST=0.0.0.0 npm run dev"
+    stdin_open: true
+    tty: true
+    ports:
+      - "127.0.0.1:35729:35729" # Live Reload
+      - "127.0.0.1:8080:8080" # App Frontend - Rollup
+      - "127.0.0.1:8081:8081" # Storybook
+    working_dir: /home/node/apps/app
+    volumes:
+      - ./frontend:/home/node/apps/app
+
+  sp_backend:
+    image: python:3 
+    container_name: sp_backend
+    restart: always
+    command: bash -c "pip install --upgrade pip && pip install -r requirements.txt && python ./manage.py makemigrations && python ./manage.py migrate && python ./manage.py runserver 0.0.0.0:8000"
+    stdin_open: true
+    tty: true
+    ports:
+      - "127.0.0.1:8000:8000" # DRF Backend
+    working_dir: /code
+    volumes:
+      - ./backend:/code  
+    environment:
+      - PYTHONUNBUFFERED=1

@@ -1,0 +1,38 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "concurrently --kill-others \"rollup -c -w\" \"start-storybook -s ./public -p 8081\"",
+    "start": "sirv public -s -p 8080",
+    "storybook": "start-storybook -s ./public -p 8081",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/svelte": "^5.3.19",
+    "@storybook/addon-notes": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.2.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^5.1.2"
+  },
+  "dependencies": {
+    "firebase": "^7.16.1",
+    "firebase-tools": "^8.5.0",
+    "firebaseui": "^4.6.0",
+    "moment": "^2.27.0",
+    "svelte": "^3.24.0",
+    "svelte-loader": "^2.13.6",
+    "svelte-routing": "^1.4.2",
+    "sirv-cli": "^0.4.4"
+  }
+}

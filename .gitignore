@@ -20,7 +20,6 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -50,6 +49,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+cover/
 
 # Translations
 *.mo
@@ -72,6 +72,7 @@ instance/
 docs/_build/
 
 # PyBuilder
+.pybuilder/
 target/
 
 # Jupyter Notebook
@@ -82,7 +83,9 @@ profile_default/
 ipython_config.py
 
 # pyenv
-.python-version
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
@@ -91,8 +94,12 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# celery beat schedule file
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
 celerybeat-schedule
+celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
@@ -123,3 +130,53 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Svelte
+.idea
+.DS_Store
+.nyc_output
+.vscode
+node_modules
+*.map
+/src/compiler/compile/internal_exports.ts
+/compiler.d.ts
+/compiler.*js
+/index.*js
+/internal
+/store
+/easing
+/motion
+/transition
+/animate
+/scratch/
+/coverage/
+/coverage.lcov
+/test/*/samples/_
+/test/sourcemaps/samples/*/output.js
+/test/sourcemaps/samples/*/output.js.map
+/test/sourcemaps/samples/*/output.css
+/test/sourcemaps/samples/*/output.css.map
+/yarn-error.log
+_actual*.*
+_output
+/types
+
+/site/cypress/screenshots/
+/site/__sapper__/
+/site/.env
+/site/.sessions
+/site/static/svelte-app.json
+/site/static/contributors.jpg
+/site/static/workers
+/site/static/organisations
+/site/scripts/svelte-app
+/site/scripts/community
+/site/src/routes/_contributors.js
+/site/src/routes/_components/WhosUsingSvelte.svelte
+
