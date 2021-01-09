@@ -1,3 +1,9 @@
+## The latest version of this prototype is now fully self-hosted and available at:
+
+https://github.com/mm-io/hasura-django-starter
+
+------
+
 # Standard Prototype
 ## A Svelte, Django Rest Framework, and Firebase Prototype Starter
 
